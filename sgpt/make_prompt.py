@@ -36,9 +36,9 @@ Prompt: {prompt}
 def initial(prompt: str, shell: bool, code: bool) -> str:
     prompt = prompt.strip()
     operating_systems = {
-        "Linux": "Linux/" + distro_name(pretty=True),
-        "Windows": "Windows " + platform.release(),
-        "Darwin": "Darwin/MacOS " + platform.mac_ver()[0],
+        "Linux": f"Linux/{distro_name(pretty=True)}",
+        "Windows": f"Windows {platform.release()}",
+        "Darwin": f"Darwin/MacOS {platform.mac_ver()[0]}",
     }
     current_platform = platform.system()
     os_name = operating_systems.get(current_platform, current_platform)
